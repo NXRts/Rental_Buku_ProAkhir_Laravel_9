@@ -28,17 +28,29 @@ class AuthController extends Controller
         // mengecek apakah login benar
         if (Auth::attempt($credentials)) {
             // mengecek apakah user ststus = active
-            if(Auth::user()->status = 'active'){
+            if(Auth::user()->status != 'active'){
                 Session::flash('status', 'failed');
                 Session::flash('message', 'Akun kamu belum Aktif. Tolong hubungi Admin');
                 return redirect('/login');
             }
-            // $request->session()->regenerate();
+            $request->session()->regenerate();   
+            if(Auth::user()->role_id == 1){
+                return redirect('dashboard');
+            }
+            if(Auth::user()->role_id == 2){
+                return redirect('profile');
+            }
             // return redirect()->intended('dashboard');
         }
         Session::flash('status', 'failed');
         Session::flash('message', 'login Invalid');
         return redirect('/login');
     }
-    
+
+    public function logout(request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('login');
+    }
 }
