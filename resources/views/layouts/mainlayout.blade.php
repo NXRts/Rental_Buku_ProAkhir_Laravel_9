@@ -19,9 +19,10 @@
             text-decoration: none;
             display: block; 
             padding: 15px 10px;
+            border: 1px solid #fff;
         }
         .sidebar a:hover{
-            background-color: black
+            background-color: rgb(42, 38, 38)
         }
     </style>
 </head>
@@ -61,26 +62,16 @@
                 <div class="sidebar col-lg-2 collapse d-lg-block"  id="navbarTogglerDemo03">
                     @if (Auth::user()->role_id == 1)
                         {{-- Admin --}}
-                        <hr>
                         <a href="dashboard">Dashboard</a>
-                        <hr>
                         <a href="books">Books</a>
-                        <hr>
                         <a href="#">Categories</a>
-                        <hr>
                         <a href="#">User</a>
-                        <hr>
                         <a href="#">Rent Log</a>
-                        <hr>
                         <a href="logout">Logout</a>
-                        <hr>
                     @else
                         {{-- Client --}}
-                        <hr>
                         <a href="profile">Profile</a>
-                        <hr>
-                        <a href="logout">Logout</a>
-                        <hr>                    
+                        <a href="logout">Logout</a>                    
                     @endif
                 </div>
                 <div class="content p-5 col-lg-10">
