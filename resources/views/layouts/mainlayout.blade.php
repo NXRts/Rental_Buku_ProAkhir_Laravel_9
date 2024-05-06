@@ -6,25 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rental Buku || @yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <style>
-        .main{
-            height: 100vh;
-        }
-        .sidebar{
-            background-color: rgb(157, 157, 157);
-            color: aliceblue;
-        }
-        .sidebar a{
-            color: aliceblue;
-            text-decoration: none;
-            display: block; 
-            padding: 15px 10px;
-            border: 1px solid #fff;
-        }
-        .sidebar a:hover{
-            background-color: rgb(42, 38, 38)
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
     
@@ -39,7 +22,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
@@ -62,11 +45,11 @@
                 <div class="sidebar col-lg-2 collapse d-lg-block"  id="navbarTogglerDemo03">
                     @if (Auth::user()->role_id == 1)
                         {{-- Admin --}}
-                        <a href="dashboard">Dashboard</a>
-                        <a href="books">Books</a>
-                        <a href="#">Categories</a>
-                        <a href="#">User</a>
-                        <a href="#">Rent Log</a>
+                        <a href="dashboard" @if (request()->route()->uri == 'dashboard') class="active" @endif>Dashboard</a>
+                        <a href="books"     @if (request()->route()->uri == 'books') class="active" @endif>Books</a>
+                        <a href="categories"@if (request()->route()->uri == 'categories') class="active" @endif>Categories</a>
+                        <a href="users"     @if (request()->route()->uri == 'users') class="active" @endif>User</a>
+                        <a href="rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
                         <a href="logout">Logout</a>
                     @else
                         {{-- Client --}}

@@ -1,0 +1,52 @@
+.main{
+    height: 100vh;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+a:hover{
+    color: #fff;
+}
+.sidebar{
+    background-color: rgb(157, 157, 157);
+    color: aliceblue;
+}
+.sidebar a{
+    color: aliceblue;
+    text-decoration: none;
+    display: block; 
+    padding: 15px 10px;
+    border: 1px solid #fff;
+}
+.sidebar a:hover{
+    background-color: rgb(42, 38, 38);
+}
+.active{
+    background-color: rgb(42, 38, 38);
+}
+.card-data{
+    border-radius: 18px;
+    border: solid 1px;
+    padding: 20px 30px;
+    color: #fff;
+}
+.card-data.book{
+    background-color: rebeccapurple;
+}
+.card-data.category {
+    background-color: rgb(51, 153, 153);
+}
+.card-data.user{
+    background-color: rgb(51, 153, 80);
+}
+.card-data i {
+    font-size: 80px;
+}
+.card-desc {
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.card-count{
+    font-size: 35px;
+}
