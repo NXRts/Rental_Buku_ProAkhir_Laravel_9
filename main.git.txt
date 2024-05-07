@@ -1,1 +1,1 @@
-Menampilkan data kategori.
+Membuat halaman tambah kategori
