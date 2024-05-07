@@ -1,1 +1,1 @@
-menambahkan file book.blade.php, category.blade.php, user.blade.php, rentlog.blade.php. Menambahkan dan mengubah dalam file web.php. membuat beberapa Controllers baru, membuat activasi sidebar. Menambahkan fitur dan mengedit file Dashboard.blade.php. Mengambil data dari database ke halaman dashboard, membuat tabel
+Menampilkan data kategori.
