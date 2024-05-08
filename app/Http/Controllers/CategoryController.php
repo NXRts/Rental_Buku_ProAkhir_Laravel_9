@@ -23,6 +23,6 @@ class CategoryController extends Controller
         ]);
 
         $category = Category::create($request->all());
-        return redirect('categories');
+        return redirect('categories')->with('status', 'Caategory Added Successfully');
     }
 }
