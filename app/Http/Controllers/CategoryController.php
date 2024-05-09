@@ -52,4 +52,9 @@ class CategoryController extends Controller
         $category->delete();
         return redirect('categories')->with('status', 'Caategory Deleted Successfully');
     }
+
+    public function deletedCategory(){
+        $deletedCategory = Category::onlyTrashed()->get();
+        return view('category-deleted-list', ['deletedCategory' => $deletedCategory]);
+    }
 }
