@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::get('category-delete/{slug}', [CategoryController::class, 'delete']);
     Route::get('category-destroy/{slug}', [CategoryController::class, 'destroy']);
     Route::get('category-deleted', [CategoryController::class, 'deletedCategory']);
+    Route::get('category-restore/{slug}', [CategoryController::class, 'restore']);
 
 
     Route::get('users', [UserController::class, 'index']);
