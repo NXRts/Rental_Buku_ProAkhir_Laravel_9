@@ -33,7 +33,7 @@
                   <td><b>{{$item->name}}</b></td>
                   <td>
                     <a href="category-edit/{{$item->slug}}"><button style="color: black">edit</button></a> 
-                    <a href="#"><button style="color: black">hapus</button></a>
+                    <a href="category-delete/{{$item->slug}}"><button style="color: black">hapus</button></a>
                   </td>
                 </tr>
                 @endforeach

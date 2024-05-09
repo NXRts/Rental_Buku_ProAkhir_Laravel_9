@@ -43,6 +43,8 @@ Route::middleware('auth')->group(function () {
     Route::post('category-add', [CategoryController::class, 'store']);
     Route::get('category-edit/{slug}', [CategoryController::class, 'edit']);
     Route::put('category-edit/{slug}', [CategoryController::class, 'update']);
+    Route::get('category-delete/{slug}', [CategoryController::class, 'delete']);
+    Route::get('category-destroy/{slug}', [CategoryController::class, 'destroy']);
 
 
     Route::get('users', [UserController::class, 'index']);
