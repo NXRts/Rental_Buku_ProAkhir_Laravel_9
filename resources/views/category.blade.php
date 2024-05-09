@@ -32,7 +32,7 @@
                   <th scope="row">{{$loop->iteration}}</th>
                   <td><b>{{$item->name}}</b></td>
                   <td>
-                    <a href="#"><button style="color: black">edit</button></a> 
+                    <a href="category-edit/{{$item->slug}}"><button style="color: black">edit</button></a> 
                     <a href="#"><button style="color: black">hapus</button></a>
                   </td>
                 </tr>
