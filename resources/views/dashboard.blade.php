@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-6"><i class="bi bi-journal-bookmark"></i></div>
                     <div class="col-6 d-flex flex-column justify-content-center align-items-end">
-                        <div class="card-desc"><a href="">Books</a></div>
+                        <div class="card-desc"><a href="#">Books</a></div>
                         <div class="card-count">{{$book_count}}</div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-6"><i class="bi bi-list-task"></i></div>
                     <div class="col-6 d-flex flex-column justify-content-center align-items-end">
-                        <div class="card-desc">Category</div>
+                        <div class="card-desc"><a href="#">Category</a></div>
                         <div class="card-count">12</div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="col-6"><i class="bi bi-people-fill"></i></div>
                     <div class="col-6 d-flex flex-column justify-content-center align-items-end">
-                        <div class="card-desc">User</div>
+                        <div class="card-desc"><a href="#">User</a></div>
                         <div class="card-count">4</div>
                     </div>
                 </div>
