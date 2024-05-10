@@ -8,6 +8,9 @@ a{
 a:hover{
     color: #fff;
 }
+h1{
+    color: gray;
+}
 .sidebar{
     background-color: rgb(157, 157, 157);
     color: aliceblue;
