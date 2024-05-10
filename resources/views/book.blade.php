@@ -10,6 +10,14 @@
         <a href="book-add" class="btn btn-primary">Tambah Data</a>
     </div>
 
+    <div class="mt-5">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }} 
+            </div>
+        @endif
+    </div>
+
     <div class="my-5">
         <table class="table table-striped">
             <thead>
