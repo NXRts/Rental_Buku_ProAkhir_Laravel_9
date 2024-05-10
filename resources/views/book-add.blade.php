@@ -3,6 +3,9 @@
 @section('title', 'Add Book')
 
 @section('content')
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <h1>Add New Book</h1>
 
     <div class="mt-5 w-50">
@@ -25,6 +28,17 @@
                 <label for="title" class="form-label">Title</label>
                 <input type="text" name="title" id="title" class="form-control" placeholder="Title Name" value="{{ old('title') }}" required>
             </div>
+
+            <div>
+                <label for="category" class="form-label">Category</label>
+                <select name="category" id="category" class="form-control" multiple>
+                    <option value="">Choose Category</option>
+                    @foreach ($categories as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="mb-2">
                 <label for="image" class="form-label">Image</label>
                 <input type="file" class="form-control" name="image">
@@ -34,5 +48,7 @@
             </div>
         </form>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 @endsection
