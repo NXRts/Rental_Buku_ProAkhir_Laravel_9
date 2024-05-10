@@ -31,8 +31,7 @@
 
             <div>
                 <label for="category" class="form-label">Category</label>
-                <select name="category" id="category" class="form-control" multiple>
-                    <option value="">Choose Category</option>
+                <select name="categories[]" id="category" class="form-control select-multiple" multiple>
                     @foreach ($categories as $item)
                         <option value="{{$item->id}}">{{$item->name}}</option>
                     @endforeach
@@ -49,6 +48,13 @@
         </form>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.select-multiple').select2();
+        });
+    </script>
 
 @endsection

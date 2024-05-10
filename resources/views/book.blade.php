@@ -25,6 +25,7 @@
                     <th scope="col">No</th>
                     <th scope="col">Code</th>
                     <th scope="col">Title</th>
+                    <th scope="col">Cayegory</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -35,6 +36,11 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$item->book_code}}</td>
                     <td>{{$item->title}}</td>
+                    <td>
+                        @foreach ($item->categories as $category)
+                            {{$category->name}}.
+                        @endforeach
+                    </td>
                     <td>{{$item->status}}</td>
                     <td>
                         <a href="#"><button style="color: black">edit</button></a>
