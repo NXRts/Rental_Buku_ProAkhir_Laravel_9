@@ -19,11 +19,11 @@
             @csrf
             <div class="mb-2">
                 <label for="code" class="form-label">Code</label>
-                <input type="text" name="book_code" id="code" class="form-control" placeholder="Books Name">
+                <input type="text" name="book_code" id="code" class="form-control" placeholder="Books Code" value="{{ old('book_code') }}" required>
             </div>
             <div class="mb-2">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" name="title" id="title" class="form-control" placeholder="Title Name">
+                <input type="text" name="title" id="title" class="form-control" placeholder="Title Name" value="{{ old('title') }}" required>
             </div>
             <div class="mb-2">
                 <label for="cover" class="form-label">Cover</label>
