@@ -51,7 +51,7 @@ class BookController extends Controller
             $request->file('image')->storeAs('cover', $newName);    
             $request['cover'] = $newName;
         }
-        
+
         $book = Book::where('slug', $slug)->first();
         $book->update($request->all());
 
@@ -59,5 +59,16 @@ class BookController extends Controller
             $book->categories()->sync($request->categories);
         }
         return redirect('books')->with('status', 'Book Updated Successfully');
+    }
+
+    public function delete($slug){
+        $book = Book::where('slug', $slug)->first();
+        return view('book-delete', ['book' => $book]);
+    }
+
+    public function destroy($slug){
+        $book = Book::where('slug', $slug)->first();
+        $book->delete();
+        return redirect('books')->with('status', 'Books Deleted Successfully');
     }
 }
