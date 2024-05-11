@@ -28,6 +28,11 @@
                 <label for="title" class="form-label">Title</label>
                 <input type="text" name="title" id="title" class="form-control" placeholder="Title Name" value="{{ old('title') }}" required>
             </div>
+            
+            <div class="mb-2">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" name="image">
+            </div>
 
             <div>
                 <label for="category" class="form-label">Category</label>
@@ -38,10 +43,6 @@
                 </select>
             </div>
 
-            <div class="mb-2">
-                <label for="image" class="form-label">Image</label>
-                <input type="file" class="form-control" name="image">
-            </div>
             <div class="mt-2">
                 <button class="btn btn-success" type="submit">Tambah</button>
             </div>

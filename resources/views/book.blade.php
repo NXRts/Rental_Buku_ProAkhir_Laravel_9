@@ -43,7 +43,7 @@
                     </td>
                     <td>{{$item->status}}</td>
                     <td>
-                        <a href="#"><button style="color: black">edit</button></a>
+                        <a href="book-edit/{{$item->slug}}"><button style="color: black">edit</button></a>
                         <a href="#"><button style="color: black">hapus</button></a>
                     </td>
                 </tr>
