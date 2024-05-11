@@ -1,4 +1,4 @@
-<p align="center"><a href='https://postimg.cc/1n9dgYq3' target='_blank'><img width="300px" src='https://i.postimg.cc/1n9dgYq3/GLp-LPfabo-AAXYGe-removebg-preview.png' border='0' alt='GLp-LPfabo-AAXYGe-removebg-preview'/></a></p>
+<p align="center"><a href='https://postimg.cc/1n9dgYq3' target='_blank'><img src='https://i.postimg.cc/1n9dgYq3/GLp-LPfabo-AAXYGe-removebg-preview.png' border='0' alt='GLp-LPfabo-AAXYGe-removebg-preview'/></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
