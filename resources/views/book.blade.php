@@ -6,7 +6,7 @@
     <h1>Books List</h1>
 
     <div class="mt-5 d-flex justify-content-end">
-        <a href="#" class="btn btn-secondary me-3">Deleted list</a>
+        <a href="book-deleted" class="btn btn-secondary me-3">Deleted list</a>
         <a href="book-add" class="btn btn-primary">Tambah Data</a>
     </div>
 
