@@ -82,4 +82,5 @@ class BookController extends Controller
         $book->restore();
         return redirect('books')->with('status', 'Book Restored Successfully');
     }
+    
 }
