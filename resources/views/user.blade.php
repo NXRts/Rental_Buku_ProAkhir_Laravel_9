@@ -46,7 +46,7 @@
                             <td>{{$item->address}}</td>
                             <td><b>{{$item->status}}</b></td>
                             <td>
-                                <a href="/{{$item->slug}}"><button type="button" class="btn btn-outline-warning">Detail</button></a> 
+                                <a href="/user-detail/{{$item->slug}}"><button type="button" class="btn btn-outline-warning">Detail</button></a> 
                                 <a href="/{{$item->slug}}"><button type="button" class="btn btn-outline-danger">Ban user</button></a>
                               </td>
                         </tr>
