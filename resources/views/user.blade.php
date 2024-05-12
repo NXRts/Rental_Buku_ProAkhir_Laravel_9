@@ -7,7 +7,7 @@
 
     <div class="mt-5 d-flex justify-content-end">
         <a href="#" class="btn btn-secondary me-3">Banned user list</a>
-        <a href="#" class="btn btn-success">New Registered User</a>
+        <a href="/registered-users" class="btn btn-success">New Registered User</a>
     </div>
 
     <div class="mt-5">

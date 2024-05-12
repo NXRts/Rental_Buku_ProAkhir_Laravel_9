@@ -13,7 +13,12 @@ class UserController extends Controller
     }
     
     public function index(){
-        $users = User::where('role_id', 2)->get();
+        $users = User::where('role_id', 2)->where('status', 'active')->get();
         return view('user', ['users' => $users]);
+    }
+
+    public function registeredUsers(){
+        $registeredUsers = User::where('status', 'inactive')->where('role_id', 2)->get();
+        return view('registered-user', ['registeredUsers' => $registeredUsers]);
     }
 }
