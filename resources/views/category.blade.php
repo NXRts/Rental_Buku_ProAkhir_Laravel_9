@@ -33,8 +33,8 @@
                   <th scope="row">{{$loop->iteration}}</th>
                   <td><b>{{$item->name}}</b></td>
                   <td>
-                    <a href="category-edit/{{$item->slug}}"><button style="color: black">edit</button></a> 
-                    <a href="category-delete/{{$item->slug}}"><button style="color: black">hapus</button></a>
+                    <a href="category-edit/{{$item->slug}}"><button type="button" class="btn btn-outline-warning">Edit</button></a> 
+                    <a href="category-delete/{{$item->slug}}"><button type="button" class="btn btn-outline-danger">Hapus</button></a>
                   </td>
                 </tr>
                 @endforeach

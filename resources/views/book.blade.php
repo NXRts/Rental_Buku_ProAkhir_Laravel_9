@@ -43,8 +43,8 @@
                     </td>
                     <td>{{$item->status}}</td>
                     <td>
-                        <a href="/book-edit/{{$item->slug}}"><button style="color: black">edit</button></a>
-                        <a href="/book-delete/{{$item->slug}}"><button style="color: black">hapus</button></a>
+                        <a href="/book-edit/{{$item->slug}}"><button type="button" class="btn btn-outline-warning">Edit</button></a>
+                        <a href="/book-delete/{{$item->slug}}"><button type="button" class="btn btn-outline-danger">Hapus</button></a>
                     </td>
                 </tr>
                 @endforeach
