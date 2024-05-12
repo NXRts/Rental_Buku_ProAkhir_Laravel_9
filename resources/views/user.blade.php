@@ -6,8 +6,8 @@
     <h1>Users List</h1>
 
     <div class="mt-5 d-flex justify-content-end">
-        <a href="category-deleted" class="btn btn-secondary me-3">Deleted list</a>
-        <a href="category-add" class="btn btn-primary">Tambah Data</a>
+        <a href="#" class="btn btn-secondary me-3">Banned user list</a>
+        <a href="#" class="btn btn-success">New Registered User</a>
     </div>
 
     <div class="mt-5">
@@ -44,10 +44,10 @@
                                 @endif
                             </td>
                             <td>{{$item->address}}</td>
-                            <td>{{$item->status}}</td>
+                            <td><b>{{$item->status}}</b></td>
                             <td>
                                 <a href="/{{$item->slug}}"><button type="button" class="btn btn-outline-warning">Detail</button></a> 
-                                <a href="/{{$item->slug}}"><button type="button" class="btn btn-outline-danger">Hapus</button></a>
+                                <a href="/{{$item->slug}}"><button type="button" class="btn btn-outline-danger">Ban user</button></a>
                               </td>
                         </tr>
                     @endforeach
