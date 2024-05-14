@@ -44,18 +44,23 @@
         <div class="body-content h-100">
             <div class="row g-0 h-100">
                 <div class="sidebar col-lg-2 collapse d-lg-block"  id="navbarTogglerDemo03">
-                    @if (Auth::user()->role_id == 1)
-                        {{-- Admin --}}
-                        <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active" @endif>Dashboard</a>
-                        <a href="/books"     @if (request()->route()->uri == 'books'      || request()->route()->uri == 'book-deleted'     || request()->route()->uri == 'book-add'           || request()->route()->uri == 'book-edit/{slug}'     || request()->route()->uri == 'book-delete/{slug}')     class="active" @endif>Books</a>
-                        <a href="/categories"@if (request()->route()->uri == 'categories' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-add'       || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-delete/{slug}') class="active" @endif>Categories</a>
-                        <a href="/users"     @if (request()->route()->uri == 'users'      || request()->route()->uri == 'registered-users' || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}'      || request()->route()->uri == 'user-banned') class="active" @endif>User</a>
-                        <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
-                        <a href="/logout">Logout</a>
-                    @else
-                        {{-- Client --}}
-                        <a href="/profile">Profile</a>
-                        <a href="/logout">Logout</a>                    
+                    @if (Auth::user())
+                        @if (Auth::user()->role_id == 1)
+                            {{-- Admin --}}
+                            <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active" @endif>Dashboard</a>
+                            <a href="/books"     @if (request()->route()->uri == 'books'      || request()->route()->uri == 'book-deleted'     || request()->route()->uri == 'book-add'           || request()->route()->uri == 'book-edit/{slug}'     || request()->route()->uri == 'book-delete/{slug}')     class="active" @endif>Books</a>
+                            <a href="/categories"@if (request()->route()->uri == 'categories' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-add'       || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-delete/{slug}') class="active" @endif>Categories</a>
+                            <a href="/users"     @if (request()->route()->uri == 'users'      || request()->route()->uri == 'registered-users' || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}'      || request()->route()->uri == 'user-banned') class="active" @endif>User</a>
+                            <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
+                            <a href="/logout">Logout</a>
+                        @else
+                            {{-- Client --}}
+                            <a href="/profile">Profile</a>
+                            <a href="/logout">Logout</a>                    
+                        @endif
+                        @else
+                        {{-- Guest --}}
+                        <a href="/login">Login</a>
                     @endif
                 </div>
                 <div class="content p-5 col-lg-10">
