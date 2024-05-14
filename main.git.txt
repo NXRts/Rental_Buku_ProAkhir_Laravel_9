@@ -1,1 +1,1 @@
-Membuat halaman tambah kategori
+asset('storage/cover/'.$item->cover)
