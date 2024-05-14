@@ -11,6 +11,7 @@
         -webkit-touch-callout: none; /* Untuk browser WebKit (Safari, Chrome) agar tidak menampilkan menu saat tap-and-hold */
         pointer-events: none; /* Mencegah peristiwa pointer, termasuk klik kanan */
     }
+    
 
     </style>
 
@@ -21,7 +22,7 @@
         <div class="row">
             @foreach ($books as $item)
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <img src="{{ $item->cover != NULL ? asset('storage/cover/'.$item->cover) : asset('images/no_data.png') }}" class="card-img-top" draggable="false" alt="HH">
                         <div class="card-body">
                             <h5 class="card-title">{{$item->book_code}}</h5>
