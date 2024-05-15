@@ -11,6 +11,5 @@ SISTEM INFORMASI RENTAL BUKU
 9. penyewa maksimal pinjam 3 buku.
 10. peminjaman maksimal 3 hari.
 11. admin bisa melihat list buku yang sedang dipinjam
-12. admin bisa melihat penyewa yang terkena denda (3 hari belum kembalikan buku)
-lalu melihat detail peminjamannya
+12. admin bisa melihat penyewa yang terkena denda (3 hari belum kembalikan buku) lalu melihat detail peminjamannya
 13. admin bisa melihat log peminjaman buku (kasih tanggal wajib pengembalian buku & tanggal aktual buku dikembalikan)
