@@ -8,17 +8,14 @@
 
     <div class="col-12 col-md-6 offset-md-2 col-lg-6 offset-md-3">
         <h1>Book Rent</h1>
-        <hr class="mb-3">
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        <div class="mt-5">
+            @if (session('message'))
+                <div class="alert {{session('alert-class')}}">
+                    {{ session('message') }} 
+                </div>
+            @endif
+        </div>
 
         <form action="book-rent" method="POST">
             @csrf

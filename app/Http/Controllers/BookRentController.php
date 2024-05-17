@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Book;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class BookRentController extends Controller
 {
@@ -22,7 +23,9 @@ class BookRentController extends Controller
         $book = Book::findOrFail($request->book_id)->only('status');
        
         if($book['status'] != 'in stock'){
-            dd("Buku sedang dipinjam");
+            Session::flash('message', 'Cannot rent, the book is not available! '); 
+            Session::flash('alert-class', 'alert-danger'); 
+            return redirect('book-rent');
         }
         dd("buku boleh dipinjam");
     }
