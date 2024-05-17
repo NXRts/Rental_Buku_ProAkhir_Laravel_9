@@ -24,7 +24,7 @@
             @csrf
             <div class="mb-3">
                 <label for="user" class="form-label">User</label>
-                <select name="user" id="user" class="form-control select2">
+                <select name="user_id" id="user" class="form-control select2">
                     <option value="">Select User</option>
                     @foreach ($user as $item)
                         <option value="{{ $item->id}}">{{ $item->username }}</option>
@@ -33,7 +33,7 @@
             </div>
             <div class="mb-3">
                 <label for="book" class="form-label">Book</label>
-                <select name="book" id="book" class="form-control select2">
+                <select name="book_id" id="book" class="form-control select2">
                     <option value="">Book</option>
                     @foreach ($books as $item)
                         <option value="{{$item->id}}">{{$item->title}}</option>
