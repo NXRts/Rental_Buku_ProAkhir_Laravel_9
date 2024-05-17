@@ -13,4 +13,8 @@ class BookRentController extends Controller
         $books = Book::all();
         return view('book-rent', ['user' => $user, 'books' => $books]);
     }
+
+    public function store(Request $request){
+        
+    }
 }
