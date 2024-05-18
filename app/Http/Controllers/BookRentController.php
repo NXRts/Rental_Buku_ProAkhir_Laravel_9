@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 class BookRentController extends Controller
 {
     public function index(){
-        $user = User::where('id', '!=', 1)->get();
+        $user = User::where('id', '!=', 1)->where('status', '!=', 'inactive')->get();
         $books = Book::all();
         return view('book-rent', ['user' => $user, 'books' => $books]);
     }
