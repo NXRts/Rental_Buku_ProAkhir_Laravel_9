@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Book;
 use App\Models\User;
+use App\Models\RentLogs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class BookRentController extends Controller
@@ -27,6 +29,23 @@ class BookRentController extends Controller
             Session::flash('alert-class', 'alert-danger'); 
             return redirect('book-rent');
         }
-        dd("buku boleh dipinjam");
+        else {
+            try {
+                DB::beginTransaction();
+                // process insert to ren_logs table
+                RentLogs::create($request->all());
+                // process update books table
+                $book = Book::findOrFail($request->book_id);
+                $book->status = 'not avaliable';
+                $book->save();
+                DB::commit();
+
+                Session::flash('message', 'Success'); 
+                Session::flash('alert-class', 'alert-success'); 
+                return redirect('book-rent');
+            } catch (\Throwable $th) {
+                DB::rollBack();
+            }
+        }
     }
 }
