@@ -3,7 +3,10 @@
 @section('title', 'Profile')
 
 @section('content')
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident vitae pariatur quo earum delectus, natus molestias aperiam alias! Molestias id enim nam vel velit ullam perspiciatis consectetur deserunt aut officia?
-    </p>
+    <h1>Selamat Datang, <span style="color: blue">{{Auth::user()->username}}</span></h1>
+
+    <div class="mt-5">
+        <h5>Your Rent Logs</h5>
+        <x-rent-log-table :rentlog='$rent_logs' />
+    </div>
 @endsection

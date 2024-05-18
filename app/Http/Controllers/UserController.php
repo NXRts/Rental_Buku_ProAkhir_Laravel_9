@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\RentLogs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     
     public function profile(){
-        return view('profile');
+        
+        $rentlogs = RentLogs::with('user', 'book')->where('user_id', Auth::User()->id)->get();
+        return view('profile', ['rent_logs' => $rentlogs]);
     }
     
     public function index(){
