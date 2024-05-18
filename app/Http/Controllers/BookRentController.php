@@ -30,21 +30,28 @@ class BookRentController extends Controller
             return redirect('book-rent');
         }
         else {
-            try {
-                DB::beginTransaction();
-                // process insert to ren_logs table
-                RentLogs::create($request->all());
-                // process update books table
-                $book = Book::findOrFail($request->book_id);
-                $book->status = 'not avaliable';
-                $book->save();
-                DB::commit();
-
-                Session::flash('message', 'Success'); 
-                Session::flash('alert-class', 'alert-success'); 
+            $count = RentLogs::where('user_id', $request->user_id)->where('actual_return_date', null)->count(); 
+            
+            if($count >= 3) {
+                Session::flash('message', 'Cannot rent, user has reach limit fo book'); 
+                Session::flash('alert-class', 'alert-danger'); 
                 return redirect('book-rent');
-            } catch (\Throwable $th) {
-                DB::rollBack();
+            }
+            else {
+                try {
+                    DB::beginTransaction();
+                    RentLogs::create($request->all());
+                    $book = Book::findOrFail($request->book_id);
+                    $book->status = 'not avaliable';
+                    $book->save();
+                    DB::commit();
+    
+                    Session::flash('message', 'Success'); 
+                    Session::flash('alert-class', 'alert-success'); 
+                    return redirect('book-rent');
+                } catch (\Throwable $th) {
+                    DB::rollBack();
+                }
             }
         }
     }
