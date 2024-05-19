@@ -54,6 +54,7 @@
                             <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
                             <a href="/"          @if (request()->route()->uri == '/') class="active" @endif>Book List</a>  
                             <a href="/book-rent" @if (request()->route()->uri == 'book-rent') class="active" @endif>Book Rent</a>
+                            <a href="/book-return" @if (request()->route()->uri == 'book-return') class="active" @endif>Return Book</a>
                             <a href="/logout">Logout</a>
                         @else
                             {{-- Client --}}

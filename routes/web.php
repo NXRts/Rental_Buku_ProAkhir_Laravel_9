@@ -78,6 +78,9 @@ Route::middleware('auth')->group(function () {
         
         // Rent Logs ROute
         Route::get('rent-logs', [RentLogController::class, 'index']);
+
+        // Return Book
+        Route::get('book-return', [BookRentController::class, 'returnBook']);
     });
 });
 
