@@ -57,6 +57,8 @@ class BookRentController extends Controller
     }
 
     public function returnBook(){
-        return view('return-book');
+        $user = User::where('id', '!=', 1)->where('status', '!=', 'inactive')->get();
+        $books = Book::all();
+        return view('return-book', ['user' => $user, 'books' => $books]);
     }
 }
