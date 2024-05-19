@@ -61,4 +61,15 @@ class BookRentController extends Controller
         $books = Book::all();
         return view('return-book', ['user' => $user, 'books' => $books]);
     }
+
+    public function saveReturnBook(Request $request){
+        $rent = RentLogs::where('user_id', $request->user_id)->where('book_id', $request->book_id)->where('actual_return_date', null)->count();
+        
+        if($rent == 1) {
+
+        }
+        else {
+
+        }
+    }
 }

@@ -81,6 +81,7 @@ Route::middleware('auth')->group(function () {
 
         // Return Book
         Route::get('book-return', [BookRentController::class, 'returnBook']);
+        Route::post('book-return', [BookRentController::class, 'saveReturnBook']);
     });
 });
 

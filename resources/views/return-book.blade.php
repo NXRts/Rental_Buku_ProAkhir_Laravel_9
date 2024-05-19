@@ -33,7 +33,7 @@
                 <select name="book_id" id="book" class="form-control select2">
                     <option value="">Book</option>
                     @foreach ($books as $item)
-                        <option value="{{$item->id}}">{{$item->title}}</option>
+                        <option value="{{$item->id}}"> {{$item->book_code}} - {{$item->title}}</option>
                     @endforeach
                 </select>
             </div>
