@@ -63,13 +63,25 @@ class BookRentController extends Controller
     }
 
     public function saveReturnBook(Request $request){
-        $rent = RentLogs::where('user_id', $request->user_id)->where('book_id', $request->book_id)->where('actual_return_date', null)->count();
-        
-        if($rent == 1) {
+        // Mengambil data sewa yang belum dikembalikan
+        $rentQuery = RentLogs::where('user_id', $request->user_id)->where('book_id', $request->book_id)->where('actual_return_date', null);
 
-        }
-        else {
+        $rentData = $rentQuery->first(); // Mengambil data sewa pertama
+        $countDate = $rentQuery->count(); // Menghitung jumlah data sewa
 
+        if ($countDate == 1) {
+            $rentData->actual_return_date = Carbon::now()->toDateString();
+            $rentData->save();
+            
+            Session::flash('message', 'The book is returned Successfully'); 
+            Session::flash('alert-class', 'alert-success'); 
+            return redirect('book-return');
+        } else {
+            // Tambahkan logika jika tidak ada data atau lebih dari satu data ditemukan
+            Session::flash('message', 'Beliau Tidak Meminjam Buku Ini'); 
+            Session::flash('alert-class', 'alert-danger'); 
+            return redirect('book-return');
         }
     }
+
 }
