@@ -1,66 +1,87 @@
-<p align="center"><a href='https://postimg.cc/1n9dgYq3' target='_blank'><img src='https://i.postimg.cc/1n9dgYq3/GLp-LPfabo-AAXYGe-removebg-preview.png' border='0' alt='GLp-LPfabo-AAXYGe-removebg-preview'/></a></p>
+<img align="right" width="350" src="https://s10.gifyu.com/images/Sfvy4.png"/><br/>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<p style="font-size: 20px;" align="center">
+    <samp>&gt; Rent Book by,
+        <b><a href="#">Muhammad Yusuf Arrofi</a></b>
+    </samp>
 </p>
 
-## About Laravel
+<br>
+<br>
+<br>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Rental Buku
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Aplikasi Rental Buku berbasis web yang dibangun menggunakan Laravel 9. Aplikasi ini memungkinkan pengguna untuk menyewa dan mengelola buku secara online.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Rental Buku
+Aplikasi Rental Menggunakan Larevel 9 & Bootstrap 5.2
 
-## Learning Laravel
+Aplikasi ini dibuat dengan:
+* **LAREVEL 9**
+* **Bootstrap 5.2**
+* **Mysql**
+* **Php 8.1**
+* **VISUAL STUDIO CODE**
 
-Laravel has the most extensive and thorough [documentation]([https://laravel.com/docs](https://laravel.com/docs/9.x)) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<h1>Fitur Admin</h1>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* Admin dapat menambah mengedit dan menghapus data Buku
+* Admin dapat menambah mengedit dan menghapus data Categiry
+* Admin hanya dapat melihat mengbanned dan mengApprove User
+* Admin dapat melihat data siapa saja yang meminjam Buku <b>(termasuk siapa saja yang sudah mengembalikan dan yang belum mengembalikan Buku)</b>
+* Admin dapat melihat buku apa saja yang ada dan yang sudah dipinjam
+* Admin dapat menemtukan siapa saja yang meminjam buku
+* Admin dapat menentukan siapa saja yang sudah menentukan siapa saja yang sudah mengembalikan buku
+* Pengaturan (Khusus Admin)
+* Pengguna (Khusus Admin)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<h1>Fitur User</h1>
 
-## Laravel Sponsors
+* User dapat melihan list buku apa saja yeng masih memiliki stok dan yang sudah dipinjam di halaman depan
+* User dapat melakukan Registrasi
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Instalasi
 
-### Premium Partners
+Berikut adalah langkah-langkah untuk menginstal proyek ini:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+1. Clone repositori ini:
+   ```bash
+    git clone https://github.com/NXRts/Rental_Buku_ProAkhir_Laravel_9
+2. Masuk ke direktori proyek:
+   ```
+    Rental_Buku_ProAkhir_Laravel_9
+3. Instal dependensi PHP menggunakan Composer:
+    ```
+    composer install
+4. Instal dependensi Node.js menggunakan NPM:
+    ```
+    npm install
+    npm run dev
+5. Generate application key:
+    ```
+    php artisan key:generate
+6. Migrasi database:
+    ```
+    php artisan migrate
+7. Jalankan server pengembangan:
+    ```
+    php artisan serve
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Salin dan tempel kode di atas ke bagian README.md. Bagian ini memberikan instruksi yang jelas dan terperinci untuk menginstal dan mengonfigurasi proyek Laravel 9 "Rental Buku".
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Akses Rental Buku
 
-## Security Vulnerabilities
+*Login Admin*
+Username : <b>admin</b>
+Password : <b>admin</b>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+*Login Kasir*
+Username : <b>client</b>
+Password : <b>client</b>
 
-## License
+## Screenshot
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[![Sfvy4.png](https://s10.gifyu.com/images/Sfvy4.png)](https://gifyu.com/image/Sfvy4)
