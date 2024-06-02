@@ -40,12 +40,40 @@ h5{
 }
 .card-data.book{
     background-color: rebeccapurple;
+    
+    &:hover{
+        background-color: rgba(0,0,200,1);
+        /* border:solid 2px white; */
+        animation:gradient 3s infinite;
+    }
 }
+/* @keyframes gradient {
+    0%{
+        background-color:red;
+    }
+    50%{
+        background-color: blue;
+    }
+    100%{
+        background-color:green;
+    }
+} */
+
 .card-data.category {
     background-color: rgb(51, 153, 153);
+    &:hover{
+        background-color: rgba(0,0,100,1);
+        /* border:solid 2px white; */
+        animation:gradient 3s infinite;
+    }
 }
 .card-data.user{
     background-color: rgb(51, 153, 80);
+    &:hover{
+        background-color: rgba(0,200,1,0.6);
+        /* border:solid 2px white; */
+        animation:gradient 3s infinite;
+    }
 }
 .card-data i {
     font-size: 80px;

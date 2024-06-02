@@ -4,7 +4,7 @@
 
 @section('content')
 
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <h1>Add New Book</h1>
 
@@ -22,13 +22,15 @@
             @csrf
             <div class="mb-2">
                 <label for="code" class="form-label">Code</label>
-                <input type="text" name="book_code" id="code" class="form-control" placeholder="Books Code" value="{{ old('book_code') }}" required>
+                <input type="text" name="book_code" id="code" class="form-control" placeholder="Books Code"
+                    value="{{ old('book_code') }}" required>
             </div>
             <div class="mb-2">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" name="title" id="title" class="form-control" placeholder="Title Name" value="{{ old('title') }}" required>
+                <input type="text" name="title" id="title" class="form-control" placeholder="Title Name"
+                    value="{{ old('title') }}" required>
             </div>
-            
+
             <div class="mb-2">
                 <label for="image" class="form-label">Image</label>
                 <input type="file" class="form-control" name="image">
@@ -38,7 +40,7 @@
                 <label for="category" class="form-label">Category</label>
                 <select name="categories[]" id="category" class="form-control select-multiple" multiple>
                     @foreach ($categories as $item)
-                        <option value="{{$item->id}}">{{$item->name}}</option>
+                        <option value="{{ $item->id }}">{{ $item->name }}</option>
                     @endforeach
                 </select>
             </div>

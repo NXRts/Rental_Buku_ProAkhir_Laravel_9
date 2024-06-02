@@ -19,9 +19,11 @@ use App\Http\Controllers\DashboardController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+| @NXRts
 */
 
 Route::get('/', [PublicController::class, 'index']);
+// Route::get('/', [PublicController::class, 'index']);
 
 Route::middleware('only_guest')->group(function () {
     Route::get('login', [AuthController::class, 'login'])->name('login');

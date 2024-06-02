@@ -13,7 +13,7 @@
     <div class="mt-5">
         @if (session('status'))
             <div class="alert alert-success">
-                {{ session('status') }} 
+                {{ session('status') }}
             </div>
         @endif
     </div>
@@ -32,21 +32,23 @@
             </thead>
             <tbody>
                 @foreach ($books as $item)
-                <tr>
-                    <td>{{$loop->iteration}}</td>
-                    <td>{{$item->book_code}}</td>
-                    <td>{{$item->title}}</td>
-                    <td>
-                        @foreach ($item->categories as $category)
-                            {{$category->name}}.
-                        @endforeach
-                    </td>
-                    <td>{{$item->status}}</td>
-                    <td>
-                        <a href="/book-edit/{{$item->slug}}"><button type="button" class="btn btn-outline-warning">Edit</button></a>
-                        <a href="/book-delete/{{$item->slug}}"><button type="button" class="btn btn-outline-danger">Hapus</button></a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $item->book_code }}</td>
+                        <td>{{ $item->title }}</td>
+                        <td>
+                            @foreach ($item->categories as $category)
+                                {{ $category->name }}.
+                            @endforeach
+                        </td>
+                        <td>{{ $item->status }}</td>
+                        <td>
+                            <a href="/book-edit/{{ $item->slug }}"><button type="button"
+                                    class="btn btn-outline-warning">Edit</button></a>
+                            <a href="/book-delete/{{ $item->slug }}"><button type="button"
+                                    class="btn btn-outline-danger">Hapus</button></a>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>

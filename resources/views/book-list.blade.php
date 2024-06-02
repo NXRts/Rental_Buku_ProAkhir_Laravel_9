@@ -5,15 +5,18 @@
 @section('content')
 
     <style>
-    img {
-        user-drag: none; /* Mencegah elemen gambar untuk didrag */
-        -webkit-user-drag: none; /* Untuk browser WebKit (Safari, Chrome) */
-        -webkit-touch-callout: none; /* Untuk browser WebKit (Safari, Chrome) agar tidak menampilkan menu saat tap-and-hold */
-        pointer-events: none; /* Mencegah peristiwa pointer, termasuk klik kanan */
-    }
-    
+        img {
+            user-drag: none;
+            /* Mencegah elemen gambar untuk didrag */
+            -webkit-user-drag: none;
+            /* Untuk browser WebKit (Safari, Chrome) */
+            -webkit-touch-callout: none;
+            /* Untuk browser WebKit (Safari, Chrome) agar tidak menampilkan menu saat tap-and-hold */
+            pointer-events: none;
+            /* Mencegah peristiwa pointer, termasuk klik kanan */
+        }
     </style>
-    
+
     <form action="" method="GET">
         <div class="row">
             {{-- Categpry --}}
@@ -40,11 +43,14 @@
             @foreach ($books as $item)
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                     <div class="card h-100">
-                        <img src="{{ $item->cover != NULL ? asset('storage/cover/'.$item->cover) : asset('images/no_data.png') }}" class="card-img-top" draggable="false" alt="HH">
+                        <img src="{{ $item->cover != null ? asset('storage/cover/' . $item->cover) : asset('images/no_data.png') }}"
+                            class="card-img-top" draggable="false" alt="HH">
                         <div class="card-body">
-                            <h5 class="card-title">{{$item->book_code}}</h5>
-                            <p class="card-text">{{$item->title}}</p>
-                            <p class="card-text text-end fw-bold {{ $item->status == 'in stock' ? 'text-success' : 'text-danger' }}">{{$item->status}}</p>
+                            <h5 class="card-title">{{ $item->book_code }}</h5>
+                            <p class="card-text">{{ $item->title }}</p>
+                            <p
+                                class="card-text text-end fw-bold {{ $item->status == 'in stock' ? 'text-success' : 'text-danger' }}">
+                                {{ $item->status }}</p>
                         </div>
                     </div>
                 </div>

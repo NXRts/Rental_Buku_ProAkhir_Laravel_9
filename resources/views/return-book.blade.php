@@ -4,19 +4,17 @@
 
 @section('content')
 
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <div class="col-12 col-md-6 offset-md-2 col-lg-6 offset-md-3">
         <h1>Book Return</h1>
-
         <div class="mt-5">
             @if (session('message'))
-                <div class="alert {{session('alert-class')}}">
-                    {{ session('message') }} 
+                <div class="alert {{ session('alert-class') }}">
+                    {{ session('message') }}
                 </div>
             @endif
         </div>
-
         <form action="book-return" method="POST">
             @csrf
             <div class="mb-3">
@@ -24,7 +22,7 @@
                 <select name="user_id" id="user" class="form-control select2">
                     <option value="">Select User</option>
                     @foreach ($user as $item)
-                        <option value="{{ $item->id}}">{{ $item->username }}</option>
+                        <option value="{{ $item->id }}">{{ $item->username }}</option>
                     @endforeach
                 </select>
             </div>
@@ -33,7 +31,7 @@
                 <select name="book_id" id="book" class="form-control select2">
                     <option value="">Book</option>
                     @foreach ($books as $item)
-                        <option value="{{$item->id}}"> {{$item->book_code}} - {{$item->title}}</option>
+                        <option value="{{ $item->id }}"> {{ $item->book_code }} - {{ $item->title }}</option>
                     @endforeach
                 </select>
             </div>
@@ -44,11 +42,11 @@
 
     </div>
 
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.select2').select2();
-    })
-</script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2();
+        })
+    </script>
 @endsection
