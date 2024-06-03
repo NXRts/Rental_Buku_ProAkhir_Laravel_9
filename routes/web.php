@@ -22,8 +22,11 @@ use App\Http\Controllers\DashboardController;
 | @NXRts
 */
 
+// Akses semua orang
 Route::get('/', [PublicController::class, 'index']);
-// Route::get('/', [PublicController::class, 'index']);
+Route::get('home', [PublicController::class, 'home']);
+Route::get('about', [PublicController::class, 'about']);
+
 
 Route::middleware('only_guest')->group(function () {
     Route::get('login', [AuthController::class, 'login'])->name('login');
@@ -86,4 +89,3 @@ Route::middleware('auth')->group(function () {
         Route::post('book-return', [BookRentController::class, 'saveReturnBook']);
     });
 });
-

@@ -8,19 +8,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <style>
-        /* style.css */
         .carousel-item {
             height: 50vh;
-            /* Set height to viewport height */
         }
-
         .carousel-item img {
             height: 100%;
             width: 100%;
             object-fit: cover;
-            /* Ensure image covers the area without distortion */
             object-position: center;
-            /* Center the image */
         }
         h5{
             color: lightgrey
@@ -41,23 +36,22 @@
             <div class="carousel-item active" data-bs-interval="10000">
                 <img src="{{ asset('images/1.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <h5> "Membaca buku akan membuat otak kamu makin cerdas dan bertambah pengetahuan baru. Menulis setiap hari akan membuat tulisanmu makin bagus dan enak dibaca."</h5>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
                 <img src="{{ asset('images/2.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
+                    <h5>"Kalau engkau hanya membaca buku yang dibaca semua orang, engkau hanya bisa berpikir sama seperti semua orang."</h5>
+                    <p>Haruki Murakami</p>
                 </div>
             </div>
 
             <div class="carousel-item">
                 <img src="{{ asset('images/3.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, consectetur. Cupiditate qui quidem, aliquid itaque dolorum eius iure libero ad consequuntur reprehenderit perferendis? Minus quasi labore, architecto aliquam unde expedita.</p>
+                    <h5>"Kuasailah semua buku, tapi jangan biarkan buku menguasai Anda. Membacalah untuk hidup, bukan hidup untuk membaca." </h5>
+                    <p>-Owen Meredith</p>
                 </div>
             </div>
         </div>

@@ -24,8 +24,13 @@ class PublicController extends Controller
         return view('book-list', ['books' => $books, 'categories' => $categories]);
     }
 
-    public function loading()
+    public function home()
     {
-        return view('template.loading');
+        return view('projek.home');
+    }
+    
+    public function about()
+    {
+        return view('projek.about');
     }
 }
