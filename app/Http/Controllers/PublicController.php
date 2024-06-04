@@ -33,4 +33,8 @@ class PublicController extends Controller
     {
         return view('projek.about');
     }
+    public function propbo()
+    {
+        return view('projek.propbo');
+    }
 }

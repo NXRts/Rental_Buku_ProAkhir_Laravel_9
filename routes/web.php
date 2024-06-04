@@ -26,6 +26,7 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', [PublicController::class, 'index']);
 Route::get('home', [PublicController::class, 'home']);
 Route::get('about', [PublicController::class, 'about']);
+Route::get('propbo', [PublicController::class, 'propbo']);
 
 
 Route::middleware('only_guest')->group(function () {
