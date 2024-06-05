@@ -1,14 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\PublicController;
-use App\Http\Controllers\RentLogController;
 use App\Http\Controllers\BookRentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RentLogController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +20,14 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 | @NXRts
-*/
+ */
 
 // Akses semua orang
 Route::get('/', [PublicController::class, 'index']);
 Route::get('home', [PublicController::class, 'home']);
 Route::get('about', [PublicController::class, 'about']);
+Route::get('another', [PublicController::class, 'another']);
 Route::get('propbo', [PublicController::class, 'propbo']);
-
 
 Route::middleware('only_guest')->group(function () {
     Route::get('login', [AuthController::class, 'login'])->name('login');
@@ -38,7 +38,7 @@ Route::middleware('only_guest')->group(function () {
 
 //
 Route::middleware('auth')->group(function () {
-    Route::get('logout', [AuthController::class, 'logout']);    
+    Route::get('logout', [AuthController::class, 'logout']);
 
     // Profile Route
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
@@ -57,7 +57,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/book-destroy/{slug}', [BookController::class, 'destroy']);
         Route::get('book-deleted', [BookController::class, 'deletedBook']);
         Route::get('book-restore/{slug}', [BookController::class, 'restore']);
-        
+
         // Category Route
         Route::get('categories', [CategoryController::class, 'index']);
         Route::get('category-add', [CategoryController::class, 'add']);
@@ -81,7 +81,7 @@ Route::middleware('auth')->group(function () {
 
         Route::get('book-rent', [BookRentController::class, 'index']);
         Route::post('book-rent', [BookRentController::class, 'store']);
-        
+
         // Rent Logs ROute
         Route::get('rent-logs', [RentLogController::class, 'index']);
 

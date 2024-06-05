@@ -1,0 +1,11 @@
+Visi & Misi
+
+Visi:
+Menjadi platform terdepan di Indonesia yang memudahkan akses masyarakat terhadap buku, baik fisik maupun digital, serta meningkatkan minat baca dan literasi melalui sistem peminjaman buku yang user-friendly dan terintegrasi.
+
+Misi:
+1. Mengatasi masalah kurangnya minat baca di kalangan masyarakat dengan menyediakan akses mudah dan aman ke koleksi buku yang beragam.
+2. Menyediakan layanan peminjaman buku yang efisien dan terorganisir menggunakan teknologi berbasis web.
+3. Menawarkan fitur rekomendasi buku berdasarkan minat dan preferensi pengguna untuk mendorong kebiasaan membaca yang lebih baik.
+4. Menciptakan ekosistem literasi yang dinamis dengan menyediakan platform bagi pengguna untuk berbagi ulasan dan berdiskusi tentang buku.
+5. Mendukung pengembangan literasi dan pengetahuan masyarakat melalui konten menarik dan edukatif yang disediakan di platform.
