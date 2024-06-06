@@ -203,8 +203,8 @@
         
 </code></pre>
 
-<h1>Output</h1>
-<pre>
+    <h1>Output</h1>
+    <pre>
     <code>
         <img src="{{ asset('images/audio.png') }}" alt="">
     </code>

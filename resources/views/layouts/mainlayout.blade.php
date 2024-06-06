@@ -34,9 +34,6 @@
                             <a class="nav-link" aria-current="page" href="/about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/kontak">Contact</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/propbo">PROPBO</a>
                         </li>
                     </ul>
@@ -69,7 +66,6 @@
                                     request()->route()->uri == 'user-banned') class="active" @endif>User</a>
                             <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
                             <a href="/" @if (request()->route()->uri == '/') class="active" @endif>Book List</a>
-                            <a href="contact"@if (request()->route()->uri == '/') class="active" @endif>Contact</a>
                             <a href="/book-rent" @if (request()->route()->uri == 'book-rent') class="active" @endif>Book Rent</a>
                             <a href="/book-return" @if (request()->route()->uri == 'book-return') class="active" @endif>Return
                                 Book</a>

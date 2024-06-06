@@ -37,8 +37,4 @@ class PublicController extends Controller
     {
         return view('projek.propbo');
     }
-    public function contact()
-    {
-        return view('projek.contact');
-    }
 }
