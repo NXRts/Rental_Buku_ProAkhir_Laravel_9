@@ -321,7 +321,6 @@
                     </svg>
                 </a>
             </div>
-
         </div>
     </div>
 @endsection

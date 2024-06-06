@@ -6,6 +6,11 @@
 
     <style>
         img {
+            width: 12.7cm;
+            /* Lebar gambar dalam cm */
+            height: 10.32cm;
+            /* Tinggi gambar dalam cm */
+            /* Agar gambar tetap proporsional */
             user-drag: none;
             /* Mencegah elemen gambar untuk didrag */
             -webkit-user-drag: none;
@@ -44,7 +49,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                     <div class="card h-100">
                         <img src="{{ $item->cover != null ? asset('storage/cover/' . $item->cover) : asset('images/no_data.png') }}"
-                            class="card-img-top" draggable="false" alt="HH">
+                            class="card-img-top" draggable="false" alt="Jangan Mencuri :\">
                         <div class="card-body">
                             <h5 class="card-title">{{ $item->book_code }}</h5>
                             <p class="card-text">{{ $item->title }}</p>

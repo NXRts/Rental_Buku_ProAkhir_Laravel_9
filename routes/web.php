@@ -1,14 +1,16 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Response;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\RentLogController;
 use App\Http\Controllers\BookRentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PublicController;
-use App\Http\Controllers\RentLogController;
-use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,16 @@ use Illuminate\Support\Facades\Route;
  */
 
 // Akses semua orang
+
+Route::get('/download-zip', function () {
+    $filePath = public_path('zip/audioPlayer.zip'); // Path ke file ZIP Anda
+    $fileName = 'audioPlayer.zip'; // Nama file yang akan diunduh
+
+    return Response::download($filePath, $fileName);
+})->name('download.zip');
+
+Route::resource('contact', ContactController::class, 'store');
+
 Route::get('/', [PublicController::class, 'index']);
 Route::get('home', [PublicController::class, 'home']);
 Route::get('about', [PublicController::class, 'about']);

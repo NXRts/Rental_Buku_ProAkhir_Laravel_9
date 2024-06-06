@@ -28,7 +28,13 @@
     </style>
 
     <h1>Menampilkan Kode Java di Halaman Web</h1>
-    <p>Berikut adalah contoh kode Java untuk memutar audio menggunakan Java Sound API:</p>
+    <p>Berikut adalah contoh kode Java untuk memutar audio menggunakan Java netbeans :</p>
+
+    <p>Unduh file audip Player</p>
+    <button class="btn btn-success" id="downloadBtn">Unduh File ZIP</button>
+    <br>
+    <br>
+
     <pre><code>
         package Audio;
 
@@ -209,4 +215,15 @@
         <img src="{{ asset('images/audio.png') }}" alt="">
     </code>
 </pre>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            var link = document.createElement('a');
+            link.href = ''; // Ganti dengan path file ZIP Anda
+            link.download = 'audioPlayer.zip'; // Nama file yang akan diunduh
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
 @endsection
