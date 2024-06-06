@@ -40,33 +40,6 @@
             </div>
         </div>
     </div>
-    <div class="mt-5">
-        <h2>#Rent Log</h2>
-        <hr>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Peminjam</th>
-                    <th scope="col">Book Title</th>
-                    <th scope="col">Rent Date</th>
-                    <th scope="col">Return Date</th>
-                    <th scope="col">Actual Return Date</th>
-                    <th scope="col">status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>123</td>
-                    <td>3213</td>
-                    <td>2131</td>
-                    <td>ON</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <hr>
 
 @endsection

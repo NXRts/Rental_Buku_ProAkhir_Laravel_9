@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2024 at 04:19 PM
+-- Generation Time: Jun 06, 2024 at 05:05 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -31,10 +31,26 @@ CREATE TABLE `books` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `book_code` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `ststua` varchar(255) NOT NULL DEFAULT 'in stock',
+  `cover` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'in stock',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`id`, `book_code`, `title`, `cover`, `slug`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, '2435168', 'Biru Langit', 'Biru Langit-1717655373.png', 'biru-langit', 'in stock', '2024-06-05 23:29:33', '2024-06-06 03:49:27', NULL),
+(2, '2317772', 'The Hobbit', 'The Hobbit-1717670607.jpg', 'the-hobbit', 'in stock', '2024-06-06 03:43:27', '2024-06-06 03:43:27', NULL),
+(3, '2432516', 'Jurnal Lisa - Teror Liburan Selolah', 'Jurnal Lisa - Teror Liburan Selolah-1717670938.jpeg', 'jurnal-lisa-teror-liburan-selolah', 'in stock', '2024-06-06 03:48:58', '2024-06-06 03:49:41', NULL),
+(4, '2753666', 'The Good Son', 'The Good Son-1717671159.jpg', 'the-good-son', 'in stock', '2024-06-06 03:52:39', '2024-06-06 03:52:39', NULL),
+(5, '2541732', 'The Lord Of The Rings: Dua Menara (The Two Towers)', 'The Lord Of The Rings: Dua Menara (The Two Towers)-1717671349.jpg', 'the-lord-of-the-rings-dua-menara-the-two-towers', 'in stock', '2024-06-06 03:54:12', '2024-06-06 03:57:38', '2024-06-06 03:57:38'),
+(6, 'A32-6124', 'ASD', 'ASD-1717671372.png', 'asd', 'in stock', '2024-06-06 03:56:12', '2024-06-06 03:56:28', '2024-06-06 03:56:28'),
+(7, '2435627', 'The Lord Of The Rings', 'The Lord Of The Rings-1717671532.jpg', 'the-lord-of-the-rings', 'in stock', '2024-06-06 03:58:14', '2024-06-06 03:58:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -50,6 +66,30 @@ CREATE TABLE `book_category` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `book_category`
+--
+
+INSERT INTO `book_category` (`id`, `book_id`, `category_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 3, NULL, NULL),
+(2, 2, 1, NULL, NULL),
+(3, 2, 3, NULL, NULL),
+(4, 3, 1, NULL, NULL),
+(5, 3, 8, NULL, NULL),
+(6, 3, 14, NULL, NULL),
+(7, 3, 15, NULL, NULL),
+(8, 4, 3, NULL, NULL),
+(9, 4, 8, NULL, NULL),
+(10, 4, 9, NULL, NULL),
+(11, 4, 10, NULL, NULL),
+(12, 4, 14, NULL, NULL),
+(13, 5, 3, NULL, NULL),
+(14, 5, 12, NULL, NULL),
+(15, 5, 15, NULL, NULL),
+(16, 6, 2, NULL, NULL),
+(17, 6, 3, NULL, NULL),
+(18, 7, 15, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -59,23 +99,33 @@ CREATE TABLE `book_category` (
 CREATE TABLE `categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(100) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'comic', NULL, NULL),
-(2, 'novel', NULL, NULL),
-(3, 'fantasy', NULL, NULL),
-(4, 'fiction', NULL, NULL),
-(5, 'mistery', NULL, NULL),
-(6, 'horror', NULL, NULL),
-(7, 'romance', NULL, NULL),
-(8, 'western', NULL, NULL);
+INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Fiksi', 'fiksi', '2024-06-05 22:59:24', '2024-06-05 22:59:24', NULL),
+(2, 'Nonfiksi', 'nonfiksi', '2024-06-05 22:59:36', '2024-06-05 22:59:36', NULL),
+(3, 'Novel', 'novel', '2024-06-05 22:59:47', '2024-06-05 22:59:47', NULL),
+(4, 'Romance', 'romance', '2024-06-05 22:59:58', '2024-06-05 22:59:58', NULL),
+(5, 'Fantasi', 'fantasi', '2024-06-05 23:00:07', '2024-06-05 23:00:07', NULL),
+(6, 'Science Fiction (Sci-Fi)', 'science-fiction-sci-fi', '2024-06-05 23:00:26', '2024-06-05 23:00:26', NULL),
+(7, 'Fan Fiction (Fan-Fic)', 'fan-fiction-fan-fic', '2024-06-05 23:00:36', '2024-06-05 23:00:36', NULL),
+(8, 'Horror', 'horror', '2024-06-05 23:00:44', '2024-06-05 23:00:44', NULL),
+(9, 'Misteri', 'misteri', '2024-06-05 23:00:50', '2024-06-05 23:00:50', NULL),
+(10, 'Thriller', 'thriller', '2024-06-05 23:00:57', '2024-06-05 23:00:57', NULL),
+(11, 'Komedi', 'komedi', '2024-06-05 23:01:46', '2024-06-05 23:01:46', NULL),
+(12, 'Inspiratif', 'inspiratif', '2024-06-05 23:01:54', '2024-06-05 23:01:54', NULL),
+(13, 'Sejarah', 'sejarah', '2024-06-05 23:02:10', '2024-06-05 23:02:10', NULL),
+(14, 'Psikologi', 'psikologi', '2024-06-05 23:02:20', '2024-06-05 23:02:20', NULL),
+(15, 'Petualangan', 'petualangan', '2024-06-05 23:02:34', '2024-06-05 23:02:34', NULL),
+(16, 'Dongeng', 'dongeng', '2024-06-05 23:04:16', '2024-06-05 23:04:16', NULL);
 
 -- --------------------------------------------------------
 
@@ -110,16 +160,26 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(7, '2014_10_12_000000_create_users_table', 1),
-(8, '2014_10_12_100000_create_password_resets_table', 1),
-(9, '2019_08_19_000000_create_failed_jobs_table', 1),
-(10, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(12, '2024_04_29_011645_creat_roles_table', 2),
-(17, '2024_04_29_021210_add_role_id_column_to_users_table', 3),
-(18, '2024_04_29_153309_create_categories_table', 3),
-(19, '2024_04_29_153447_create_books_table', 3),
-(20, '2024_04_29_153836_create_book_category_table', 3),
-(21, '2024_04_29_154920_create_rent_logs_table', 4);
+(19, '2014_10_12_000000_create_users_table', 1),
+(20, '2014_10_12_100000_create_password_resets_table', 1),
+(21, '2019_08_19_000000_create_failed_jobs_table', 1),
+(22, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(23, '2024_04_29_011645_creat_roles_table', 1),
+(24, '2024_04_29_021210_add_role_id_column_to_users_table', 1),
+(25, '2024_04_29_153309_create_categories_table', 1),
+(26, '2024_04_29_153447_create_books_table', 1),
+(27, '2024_04_29_153836_create_book_category_table', 1),
+(28, '2024_04_29_154920_create_rent_logs_table', 1),
+(29, '2024_05_09_072557_add_slug_column_to_categories_tabele', 1),
+(30, '2024_05_09_074005_change_slug_column_into_nullable_in_categories_table', 1),
+(31, '2024_05_09_131012_add_soft_delete_column_to_categories_table', 1),
+(32, '2024_05_10_013223_add_slug_cover_column_to_books_table', 1),
+(33, '2024_05_11_023927_add_soft_delete_to_books_table', 1),
+(34, '2024_05_12_031452_add_slug_to_users_table', 1),
+(35, '2024_05_12_044208_add_softdelete_to_users_table', 1),
+(36, '2024_06_06_011911_create_contacts_table', 1),
+(37, '2024_06_06_015109_create_contacts_table', 2),
+(38, '2024_06_06_133723_create_contacts_table', 3);
 
 -- --------------------------------------------------------
 
@@ -199,12 +259,14 @@ INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `username` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `address` text NOT NULL,
   `status` varchar(255) NOT NULL DEFAULT 'inactive',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -212,11 +274,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `phone`, `address`, `status`, `created_at`, `updated_at`, `role_id`) VALUES
-(1, 'admin', '$2y$10$VsKcz5fbDhlRQ8sw9Ltb6.ndJ.T.AJofhJ/mBDzOLdAtkyjdHDZFW', '', 'Kerjo', 'active', NULL, NULL, 1),
-(2, 'tes1', '$2y$10$XmVbrM6R08AILp8Zn7j/K.OYAZvdk5imq6dND4qFpNlOeUglsXcUe', NULL, 'Tes 1', 'inactive', NULL, NULL, 2),
-(3, 'tes2', '$2y$10$HsooGPUp766GeIzbQoiyB.VewoZR3/vLi9hvJuNR7HtWpvSlUaR5e', NULL, 'Tes 2', 'active', NULL, NULL, 2),
-(11, 'Azka GG', '$2y$10$mm7GLK2WdKdeXwVXMqriQe5DUKwFwJkGE0EIyFtzH6G2j39jiposq', '85712239267', 'Azka Jaten', 'inactive', '2024-05-02 06:33:09', '2024-05-02 06:33:09', 2);
+INSERT INTO `users` (`id`, `username`, `slug`, `password`, `phone`, `address`, `status`, `created_at`, `updated_at`, `deleted_at`, `role_id`) VALUES
+(1, 'admin', 'admin', '$2y$10$kyaFzeyv3OT5Sw9jSEsl0.iqnGsr8j4red2kGBLNTf1MXkCqX0VH.', '8232132131', 'Admin', 'active', NULL, NULL, NULL, 1),
+(2, 'Azka GG', 'azka-gg', '$2y$10$e7TZ8VBY3NYcQAqVLBzlgujesZHroATItR.VDVty4zxZdZbvX.Ncu', NULL, 'Azka GG', 'active', '2024-06-05 22:57:17', '2024-06-05 22:57:50', NULL, 2);
 
 --
 -- Indexes for dumped tables
@@ -299,19 +359,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `book_category`
 --
 ALTER TABLE `book_category`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -323,7 +383,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -347,7 +407,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
