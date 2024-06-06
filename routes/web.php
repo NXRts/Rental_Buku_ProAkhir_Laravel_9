@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BookRentController;
@@ -26,8 +27,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'index']);
 Route::get('home', [PublicController::class, 'home']);
 Route::get('about', [PublicController::class, 'about']);
-Route::get('another', [PublicController::class, 'another']);
 Route::get('propbo', [PublicController::class, 'propbo']);
+Route::get('contact', [PublicController::class, 'contact']);
+
 
 Route::middleware('only_guest')->group(function () {
     Route::get('login', [AuthController::class, 'login'])->name('login');

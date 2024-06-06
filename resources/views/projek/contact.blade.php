@@ -209,40 +209,38 @@
     <h1>Contact Admin</h1>
 
     <div class="card col-4">
-        <form class="form">
-
+        <form class="form" action="contact.store{{ route('contact.store') }}" method="POST">
+            @csrf
             <div class="flex">
                 <label>
-                    <input required="" placeholder="" type="text" class="input">
-                    <span>first name</span>
+                    <input required name="first_name" placeholder="" type="text" class="input">
+                    <span>First Name</span>
                 </label>
-
+        
                 <label>
-                    <input required="" placeholder="" type="text" class="input">
-                    <span>last name</span>
+                    <input required name="last_name" placeholder="" type="text" class="input">
+                    <span>Last Name</span>
                 </label>
             </div>
-
+        
             <label>
-                <input required="" placeholder="" type="email" class="input">
-                <span>email</span>
+                <input required name="email" placeholder="" type="email" class="input">
+                <span>Email</span>
             </label>
-
+        
             <label>
-                <input required="" type="tel" placeholder="" class="input">
-                <span>contact number</span>
+                <input required name="contact_number" type="tel" placeholder="" class="input">
+                <span>Contact Number</span>
             </label>
             <label>
-                <textarea required="" rows="3" placeholder="" class="input01"></textarea>
-                <span>message</span>
+                <textarea required name="message" rows="3" placeholder="" class="input01"></textarea>
+                <span>Message</span>
             </label>
-
-            <button class="fancy" href="#">
-                <span class="top-key"></span>
-                <span class="text">submit</span>
-                <span class="bottom-key-1"></span>
-                <span class="bottom-key-2"></span>
+        
+            <button class="fancy" type="submit">
+                <span class="text">Submit</span>
             </button>
         </form>
+        
     </div>
 @endsection
